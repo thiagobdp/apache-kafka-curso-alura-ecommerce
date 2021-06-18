@@ -1,0 +1,1 @@
+lib comum utilizada por todos serviços do projeto

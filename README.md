@@ -1,1 +1,1 @@
-# apache-kafka-curso-alura-ecommerce
+# Apacha Kafka - Curso da Alura - projeto Ecommerce

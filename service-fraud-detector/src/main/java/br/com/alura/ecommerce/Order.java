@@ -2,36 +2,36 @@ package br.com.alura.ecommerce;
 
 import java.math.BigDecimal;
 
+/**
+ * utilizada apenas para serializar e deserializar as mensagens
+ *
+ */
 public class Order {
 
-    private final String orderId;
-    private final BigDecimal amount;
-    private final String email;
+	private final String orderId;
+	private final BigDecimal amount;
+	private final String email;
 
-    public Order(String orderId, BigDecimal amount, String email) {
-        this.orderId = orderId;
-        this.amount = amount;
-        this.email = email;
-    }
+	public Order(String orderId, BigDecimal amount, String email) {
+		this.orderId = orderId;
+		this.amount = amount;
+		this.email = email;
+	}
 
-    public BigDecimal getAmount() {
-        return amount;
-    }
+	public BigDecimal getAmount() {
+		return amount;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getOrderId() {
-        return orderId;
-    }
+	public String getOrderId() {
+		return orderId;
+	}
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId='" + orderId + '\'' +
-                ", amount=" + amount +
-                ", email='" + email + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Order{" + "orderId='" + orderId + '\'' + ", amount=" + amount + ", email='" + email + '\'' + '}';
+	}
 }
