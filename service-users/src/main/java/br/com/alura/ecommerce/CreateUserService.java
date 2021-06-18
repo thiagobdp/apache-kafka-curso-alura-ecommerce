@@ -53,6 +53,7 @@ public class CreateUserService implements ConsumerService<Order> {
     private boolean isNewUser(String email) throws SQLException {
         var results = database.query("select uuid from Users " +
                 "where email = ? limit 1", email);
+        //se tem "próxima linha" é porque existe um registro (usuario) no banco
         return !results.next();
     }
 

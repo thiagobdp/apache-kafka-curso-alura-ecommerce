@@ -79,6 +79,9 @@ public class KafkaService<T> implements Closeable {
 						try {
 							parse.consume(record);
 						} catch (Exception e) {
+							// aqui trata a exception ao consumir individualmente cada registro consumido.
+							// está dando catch em qualquer Exception para garantir que mesmo ocorrendo erro
+							// um um record, ele continuará processando os próximos records
 							e.printStackTrace();
 							var message = record.value();
 							deadLetter.send("ECOMMERCE_DEADLETTER", message.getId().toString(),

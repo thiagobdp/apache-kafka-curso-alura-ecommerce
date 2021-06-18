@@ -39,6 +39,7 @@ public class FraudDetectorService implements ConsumerService<Order> {
         new ServiceRunner<>(FraudDetectorService::new).start(1);
     }
 
+    //para podes enviar mensagens
     private final KafkaDispatcher<Order> orderDispatcher = new KafkaDispatcher<>();
 
     public void parse(ConsumerRecord<String, Message<Order>> record) throws ExecutionException, InterruptedException, SQLException {
