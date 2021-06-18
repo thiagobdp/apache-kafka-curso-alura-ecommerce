@@ -11,8 +11,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
- * Dispatche é o produtor
+ * Dispatche é o produtor. Ele só não chamou de KafkaProducer pois já existe
+ * essa classe.
  * 
+ * Estende Closeable para que feche a porta caso ocorra qualquer problema. É
+ * implementado o método close.
  */
 public class KafkaDispatcher<T> implements Closeable {
 
