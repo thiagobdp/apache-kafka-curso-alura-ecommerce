@@ -35,6 +35,10 @@ public class KafkaDispatcher<T> implements Closeable {
 		properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 		// aqui passo o serializer (transformador) do value (que eh a mensagem)
 		properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, GsonSerializer.class.getName());
+
+		// exige que o OK serja dando somente quando todas as réplicas confirmarem que
+		// receberam cópia da mensagem do líder.
+		// se clicar com Ctrl + click em cima do ACKS_CONFIG ele leva para a documentação
 		properties.setProperty(ProducerConfig.ACKS_CONFIG, "all");
 
 		// a quantidade de tempo que as msgs ficam armazenadas no servidor e a
